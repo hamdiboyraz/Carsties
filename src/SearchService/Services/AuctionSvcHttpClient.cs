@@ -18,7 +18,7 @@ public class AuctionSvcHttpClient
     {
         // Retrieves the last updated date of an item.
         var lastUpdated = await DB.Find<Item, string>()
-            .Sort(x => x.Descending(y => y.UpdatedAt))
+            .Sort(x => x.Descending(x => x.UpdatedAt))
             .Project(x => x.UpdatedAt.ToString())
             .ExecuteFirstAsync();
 

@@ -35,7 +35,7 @@ namespace IdentityService.Pages.Register
 
         public async Task<IActionResult> OnPostAsync()
         {
-            if (Input.Button != "register") return RedirectToPage("~/"); // Home page
+            if (Input.Button != "register") return Redirect("~/"); // Home page
 
             if (ModelState.IsValid)
             {

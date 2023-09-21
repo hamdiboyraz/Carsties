@@ -34,7 +34,8 @@ internal static class HostingExtensions
             .AddInMemoryIdentityResources(Config.IdentityResources)
             .AddInMemoryApiScopes(Config.ApiScopes)
             .AddInMemoryClients(Config.Clients)
-            .AddAspNetIdentity<ApplicationUser>();
+            .AddAspNetIdentity<ApplicationUser>()
+            .AddProfileService<CustomProfileService>();
 
         builder.Services.ConfigureApplicationCookie(options =>
         {
@@ -45,6 +46,11 @@ internal static class HostingExtensions
 
 
         return builder.Build();
+    }
+
+    private static void AddProfileService<T>()
+    {
+        throw new NotImplementedException();
     }
 
     public static WebApplication ConfigurePipeline(this WebApplication app)

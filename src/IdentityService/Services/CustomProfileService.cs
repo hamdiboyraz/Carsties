@@ -17,7 +17,7 @@ public class CustomProfileService : IProfileService
     }
     public async Task GetProfileDataAsync(ProfileDataRequestContext context)
     {
-        var user = await _userManager.GetUserAsync(context.Subject);
+        var user = await _userManager.GetUserAsync(context.Subject); // context.Subject is the user's info
         var existingClaims = await _userManager.GetClaimsAsync(user);
 
         var claims = new List<Claim>

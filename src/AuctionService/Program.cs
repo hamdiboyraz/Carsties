@@ -39,7 +39,7 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     {
         options.Authority = builder.Configuration["IdentityServiceUrl"];
         options.RequireHttpsMetadata = false; // We are using http in dev env
-        options.TokenValidationParameters.ValidateAudience = false;
+        options.TokenValidationParameters.ValidateAudience = false; // We are not validating audience in dev env
         options.TokenValidationParameters.NameClaimType = "username";
     });
 

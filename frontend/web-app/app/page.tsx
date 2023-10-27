@@ -1,10 +1,11 @@
-"use client";
-export default function Home() {
-  console.log("hi");
+import Listings from "./auctions/Listings";
 
+export default function Home() {
   return (
     <div>
-      <h3 className="text-3xl font-semibold">Content goes here!!</h3>
+      <h3 className="text-3xl font-semibold">
+        <Listings />
+      </h3>
     </div>
   );
 }

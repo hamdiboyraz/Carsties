@@ -4,6 +4,6 @@ type Props = {
   auction: any;
 };
 
-export default function AuctionCard(props: Props) {
-  return <div>{props.auction.make}</div>;
+export default function AuctionCard({ auction }: Props) {
+  return <div>{auction.make}</div>;
 }

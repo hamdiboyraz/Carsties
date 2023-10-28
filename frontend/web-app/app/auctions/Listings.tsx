@@ -14,9 +14,9 @@ export default async function Listings() {
   return (
     <div>
       {data &&
-        data.results.map((auction: any) => {
-          <AuctionCard auction={auction} key={auction.id} />;
-        })}
+        data.results.map((auction: any) => (
+          <AuctionCard auction={auction} key={auction.id} />
+        ))}
     </div>
   );
 }

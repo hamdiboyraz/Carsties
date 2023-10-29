@@ -5,6 +5,9 @@ const nextConfig = {
       level: "verbose",
     },
   },
+  images: {
+    domains: ["cdn.pixabay.com"],
+  },
   // async headers() {
   //   return [
   //     {

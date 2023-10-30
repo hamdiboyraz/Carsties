@@ -1,5 +1,6 @@
 import Image from "next/image";
 import React from "react";
+import CountdownTimer from "./CountdownTimer";
 
 type Props = {
   auction: any;
@@ -14,10 +15,13 @@ export default function AuctionCard({ auction }: Props) {
             src={auction.imageUrl}
             alt="image"
             fill
-            priority
+            priority // This will make sure that the image is loaded before the auction card is rendered.
             className="object-cover"
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
           />
+          <div className="absolute bottom-2 left-2">
+            <CountdownTimer auctionEnd={auction.auctionEnd} />
+          </div>
         </div>
       </div>
       <div className="flex justify-between items-center mt-4">

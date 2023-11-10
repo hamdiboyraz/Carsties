@@ -5,10 +5,11 @@ import { FaSearch } from "react-icons/fa";
 
 export default function Search() {
   const setParams = useParamsStore((state) => state.setParams);
-  const [value, setValue] = useState("");
+  const setSearchValue = useParamsStore((state) => state.setSearchValue);
+  const searchValue = useParamsStore((state) => state.searchValue);
 
   function handleOnChange(e: any) {
-    setValue(e.target.value);
+    setSearchValue(e.target.value);
   }
 
   function handleOnKeyDown(e: any) {
@@ -18,12 +19,13 @@ export default function Search() {
   }
 
   function handleSearch() {
-    setParams({ searchTerm: value });
+    setParams({ searchTerm: searchValue });
   }
 
   return (
     <div className="flex w-[50%] items-center border-2 rounded-full py-2 shadow-sm">
       <input
+        value={searchValue}
         onKeyDown={handleOnKeyDown}
         onChange={handleOnChange}
         type="text"

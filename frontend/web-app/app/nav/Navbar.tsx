@@ -11,7 +11,7 @@ export default async function Navbar() {
     <header className="navbar-container">
       <Logo />
       <Search />
-      {user ? <UserActions /> : <LoginButton />}
+      {user ? <UserActions user={user} /> : <LoginButton />}
     </header>
   );
 }

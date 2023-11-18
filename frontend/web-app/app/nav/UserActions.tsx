@@ -14,7 +14,7 @@ type Props = {
 
 export default function UserActions({ user }: Props) {
   return (
-    <Dropdown label={`Welcome ${user?.name}`} inline>
+    <Dropdown label={`Welcome ${user.name}`} inline>
       <Dropdown.Item icon={HiUser}>
         <Link href="/">My Auctions</Link>
       </Dropdown.Item>

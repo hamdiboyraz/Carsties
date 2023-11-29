@@ -21,3 +21,7 @@ export async function updateAuctionTest() {
 export async function createAuction(auction: FieldValues) {
   return await fetchWrapper.post("auctions", auction);
 }
+
+export async function getDetailedViewData(id: string): Promise<Auction> {
+  return await fetchWrapper.get(`auctions/${id}`);
+}
